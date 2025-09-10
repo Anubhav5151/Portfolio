@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anubhav Tyagi | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: #ddd;
+    }
+
+    header {
+      background: linear-gradient(to right, #007bff, #00c6ff);
+      color: #fff;
+      padding: 25px 0;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav button {
+      padding: 7px 15px;
+      background: #fff;
+      color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    section.reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #222;
+      font-size: 2rem;
+    }
+
+    body.dark-mode h2 {
+      color: #fff;
+    }
+
+    .typewriter {
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: #007bff;
+      height: 30px;
+      overflow: hidden;
+      border-right: 2px solid;
+      white-space: nowrap;
+      animation: typing 3s steps(30, end), blink 0.8s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    a {
+      color: #007bff;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: none;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      font-size: 18px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    body.dark-mode .project-card {
+      background: #1e1e1e;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      section {
+        padding: 40px 15px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .typewriter {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Anubhav Tyagi</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Hello! I'm Anubhav</h2>
+    <div class="typewriter">A passionate Frontend Developer</div>
+    <button onclick="showMessage()">Click Me</button>
+    <p id="message" style="color: green; margin-top: 10px;"></p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a B.Tech 4th-year student at Meerut Institute of Engineering and Technology. I love creating clean and
+      responsive web designs using HTML, CSS, and JavaScript.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Amazon Clone</h3>
+        <p>Built a simple frontend clone of Amazon using HTML & CSS.</p>
+        <a href="https://github.com/Anubhav5151" target="_blank" rel="noopener noreferrer">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Text-to-Speech App</h3>
+        <p>Speech synthesis web app using HTML, CSS, and JavaScript.</p>
+        <a href="https://github.com/Anubhav5151" target="_blank" rel="noopener noreferrer">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Java (Basics)</li>
+      <li>Responsive Design</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: anubhav@example.com</p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/anubhav" target="_blank"
+        rel="noopener noreferrer">linkedin.com/in/anubhav</a></p>
+    <p>GitHub: <a href="https://github.com/Anubhav5151" target="_blank"
+        rel="noopener noreferrer">github.com/Anubhav5151</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Anubhav Tyagi. All rights reserved.</p>
+  </footer>
+
+  <button onclick="scrollToTop()" id="scrollTopBtn">↑</button>
+
+  <script>
+    function showMessage() {
+      document.getElementById('message').textContent = "Thanks for checking my portfolio!";
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.onscroll = function () {
+      const btn = document.getElementById('scrollTopBtn');
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    const sections = document.querySelectorAll('section');
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add('reveal');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+</body>
+
+</html>
